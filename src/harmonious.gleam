@@ -2,6 +2,50 @@ pub opaque type Device {
   Device(device: IoDevice, scan_code: Int, status: KeyStatus)
 }
 
+pub type Key {
+  Music
+  Tv
+  Movie
+  Red
+  Green
+  Yellow
+  Blue
+  Dvr
+  Guide
+  Info
+  Exit
+  Menu
+  VolUp
+  VolDown
+  Left
+  Right
+  Up
+  Down
+  OK
+  ProgramUp
+  ProgramDown
+  Mute
+  Back
+  Rewind
+  Forward
+  Record
+  Stop
+  Play
+  Pause
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
+  Nine
+  Zero
+  Minus
+  Enter
+}
+
 pub type KeyStatus {
   Released
   Pressed
