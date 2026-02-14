@@ -1,6 +1,6 @@
 import gleam/list
 import gleeunit
-import harmonious.{Event, Pressed, Released}
+import harmonious.{Event, Pressed, Released, Repeated}
 
 pub fn main() {
   gleeunit.main()
@@ -10,18 +10,10 @@ pub fn read_known_file_test() {
   let assert Ok(device) = harmonious.open("test/evdev_capture.bin")
   assert read_until_eof(device, [])
     == [
-      Event(458_782, Pressed),
-      Event(458_782, Released),
-      Event(458_783, Pressed),
-      Event(458_783, Released),
-      Event(458_784, Pressed),
-      Event(458_784, Released),
-      Event(786_920, Pressed),
-      Event(786_920, Released),
-      Event(786_925, Pressed),
-      Event(786_925, Released),
-      Event(786_921, Pressed),
-      Event(786_921, Released),
+      Event(harmonious.One, Pressed),
+      Event(harmonious.One, Repeated),
+      Event(harmonious.One, Released),
+      Event(harmonious.Two, Pressed),
     ]
 }
 
