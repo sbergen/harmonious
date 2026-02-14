@@ -10,6 +10,9 @@ which will work with a Logitech Unifying receiver.
 I believe I remember reading that C-U0004 is the last version that fully supports the remote,
 but I can no longer find the information online!
 (If someone has more info on this, please open an issue with it!)
+The remote uses non-standard scan codes,
+which is why this library doesn't use the the evdev key codes,
+but instead just decodes the scan codes directly.
 
 The API is very simple: you use `open` to open the evdev file,
 and `read` to perform a (blocking) read of the next key press, repeat, or release.
